@@ -25,6 +25,8 @@ pub enum StakingError {
     AccuredTokenPerShareOverflow,
     #[error("Pool counter overflow")]
     PoolCounterOverflow,
+    #[error("Total supply overflow")]
+    TotalSupplyOverflow,
     #[error("Operation overflowed")] 
     Overflow,
 
@@ -43,6 +45,7 @@ pub enum StakingError {
     PoolTokenAccountMissmatch,
     #[error("User Info missmatch")]
     UserInfoMissmatch,
+
 }
 
 impl PrintProgramError for StakingError {

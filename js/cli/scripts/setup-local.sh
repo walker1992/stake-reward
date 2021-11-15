@@ -19,11 +19,11 @@ create_keypair () {
 }
 
 build_program () {
-  cargo build-bpf --manifest-path ../../program/Cargo.toml
+  cargo build-bpf --manifest-path ../../../program/Cargo.toml
 }
 
 setup_validator() {
-  solana-test-validator --bpf-program 88gNHvxuPxaFTPELWBRYk59xCFqpjCt6MoBA1Lqk7qny ../../program/target/deploy/stake_reward.so --quiet --reset --slots-per-epoch 32 &
+  solana-test-validator --bpf-program 88gNHvxuPxaFTPELWBRYk59xCFqpjCt6MoBA1Lqk7qny ../../../program/target/deploy/stake_reward.so --quiet --reset --slots-per-epoch 32 &
   pid=$!
   solana config set --url http://127.0.0.1:8899
   solana config set --commitment confirmed
